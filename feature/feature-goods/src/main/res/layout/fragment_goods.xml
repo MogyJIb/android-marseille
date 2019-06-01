@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/goods_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:title="Goods"
+            app:titleMarginEnd="@dimen/_64dp"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/cart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="@dimen/_16dp"
+            android:src="@drawable/baseline_shopping_cart_white_18"
+
+            app:backgroundTint="@color/primary"
+            app:tint="@color/background"
+            />
+
+    </FrameLayout>
+
+    <fragment
+        android:id="@+id/goods_nav_host_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/goods_nav_graph"
+        />
+
+</LinearLayout>

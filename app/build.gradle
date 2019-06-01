@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+apply from: '../android_commons.gradle'
+
+android {
+    defaultConfig {
+        applicationId App.id
+    }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+}
+
+dependencies {
+    implementation project(Modules.coreUiKit)
+    implementation project(Modules.coreBase)
+    implementation project(Modules.featureMain)
+    implementation project(Modules.featureSplash)
+    implementation project(Modules.data)
+
+    implementation Libraries.appcompat
+    implementation Libraries.coreKtx
+    implementation Libraries.core
+    implementation Libraries.navigation
+    implementation Libraries.navigationUi
+    implementation Libraries.koin
+}

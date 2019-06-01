@@ -1,0 +1,5 @@
+include ':app',
+        ':buildSrc',
+        ':core:core-uikit', ':core:core-base',
+        ':feature:feature-main', ':feature:feature-goods', ':feature:feature-splash',
+        ':data'

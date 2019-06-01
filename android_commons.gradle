@@ -1,0 +1,26 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode App.versionCode
+        versionName App.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility Versions.javaSdk
+        targetCompatibility Versions.javaSdk
+    }
+}
+
+dependencies {
+    implementation Libraries.kotlin
+}

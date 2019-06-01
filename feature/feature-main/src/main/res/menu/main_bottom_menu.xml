@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/goods_tab_nav_graph"
+        android:icon="@drawable/baseline_add_shopping_cart_white_24"
+        android:title="@string/menu_goods_title"
+        />
+
+</menu>

@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+apply from: '../android_commons.gradle'
+
+dependencies {
+    implementation Libraries.appcompat
+    implementation Libraries.coreKtx
+    implementation Libraries.core
+    implementation Libraries.koin
+    implementation Libraries.rxjava2
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxandroid
+    implementation Libraries.roomRuntime
+    kapt Libraries.roomCompiler
+    implementation Libraries.roomRxjava2
+    implementation Libraries.roomQuava
+    testImplementation Libraries.roomTest
+}

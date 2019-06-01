@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="transparent">#00000000</color>
+    <color name="background_inverse">#000</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="primary">#000002</color>
+    <color name="primary_dark">#000002</color>
+    <color name="accent">#f64ca2</color>
+    <color name="background">#FFFFFF</color>
+    <color name="foreground">#010506</color>
+    <color name="text_primary">#da000000</color>
+    <color name="text_hint">#f64ca2</color>
+    <color name="text_primary_inverse">#FFFFFF</color>
+    <color name="error">#c20007</color>
+    <color name="toast_background">#F2F64CA2</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
+
+</resources>

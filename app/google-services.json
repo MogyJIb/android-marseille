@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "787305992916",
+    "firebase_url": "https://by-gomelcity.firebaseio.com",
+    "project_id": "by-gomelcity",
+    "storage_bucket": "by-gomelcity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787305992916:android:914918549fca6d69",
+        "android_client_info": {
+          "package_name": "by.city.gomel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787305992916-1rgop0m8q2k9i4v17dct28veehle0kht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXLBNdnLEDoiC9VFnFi_WnPc1T9EOY0G4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787305992916-1rgop0m8q2k9i4v17dct28veehle0kht.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "787305992916-435cv95rg43cc7nko030gsja4lra08e1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "by.keymobi.gomelcity"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

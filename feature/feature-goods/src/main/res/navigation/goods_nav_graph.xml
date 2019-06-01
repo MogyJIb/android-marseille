@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/goods_navigation_graph"
+
+    app:startDestination="@id/goods_category_fragment"
+    >
+
+    <fragment
+        android:id="@+id/goods_category_fragment"
+        android:name="by.gomel.marseille.feature.goods.presentation.category.GoodsCategoryFragment"
+        android:label="fragment_goods_grid"
+
+        tools:layout="@layout/fragment_goods_category"
+        >
+
+        <action
+            android:id="@+id/action_category_to_goods"
+            app:destination="@id/goods_list_fragment"
+            />
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/goods_list_fragment"
+        android:name="by.gomel.marseille.feature.goods.presentation.list.GoodsListFragment"
+        android:label="fragment_goods_list"
+
+        tools:layout="@layout/fragment_goods_list"
+        >
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
+            />
+
+        <action
+            android:id="@+id/action_goods_list_to_details"
+            app:destination="@id/details_fragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="by.gomel.marseille.feature.goods.presentation.detail.GoodsDetailFragment"
+        android:label="fragment_details"
+        >
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="by.gomel.marseille.feature.goods.presentation.cart.CartFragment"
+        android:label="fragment_cart"
+
+        tools:layout="@layout/fragment_cart"
+        />
+
+</navigation>
