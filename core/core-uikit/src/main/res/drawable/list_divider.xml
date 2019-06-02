@@ -5,11 +5,10 @@
 
     <item
         android:left="@dimen/_8dp"
-        android:right="@dimen/_8dp"
         >
 
         <shape
-            android:shape="rectangle"
+            android:shape="oval"
             >
 
             <size

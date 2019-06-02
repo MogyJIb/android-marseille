@@ -10,9 +10,9 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="by.gomel.marseille.feature.splash.presentation.SplashFragment"
+        android:name="by.gomel.marseille.feature.splash.presentation.SplashFlowFragment"
 
-        tools:layout="@layout/fragment_splash"
+        tools:layout="@layout/fragment_splash_flow"
         android:label="splash_fragment"
         >
 
@@ -27,9 +27,9 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="by.gomel.marseille.feature.main.presentation.MainFragment"
+        android:name="by.gomel.marseille.feature.main.presentation.MainFlowFragment"
 
-        tools:layout="@layout/fragment_main"
+        tools:layout="@layout/fragment_main_flow"
         android:label="main_fragment"
         />
 

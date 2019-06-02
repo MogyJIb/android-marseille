@@ -1,12 +1,10 @@
 apply plugin: 'com.android.library'
 apply from: '../../android_commons.gradle'
 
-
 dependencies {
     implementation project(Modules.coreUiKit)
     implementation project(Modules.coreBase)
-    implementation project(Modules.featureGoods)
-    implementation project(Modules.featureAbout)
+    implementation project(Modules.data)
 
     implementation Libraries.appcompat
     implementation Libraries.coreKtx
@@ -18,4 +16,3 @@ dependencies {
     implementation Libraries.rxkotlin
     implementation Libraries.rxandroid
 }
-

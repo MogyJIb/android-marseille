@@ -12,6 +12,7 @@ object Modules {
     val featureMain = ":feature:feature-main"
     val featureGoods = ":feature:feature-goods"
     val featureSplash = ":feature:feature-splash"
+    val featureAbout = ":feature:feature-about"
 }
 
 object Versions {

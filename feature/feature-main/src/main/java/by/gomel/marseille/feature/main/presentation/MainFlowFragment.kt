@@ -10,10 +10,10 @@ import androidx.navigation.NavController
 import by.gomel.marseille.core.base.view.BaseFragment
 import by.gomel.marseille.feature.main.R
 import by.gomel.marseille.feature.main.domain.setupWithNavController
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main_flow.*
 
 
-class MainFragment : BaseFragment(), OnBackPressedCallback {
+class MainFlowFragment : BaseFragment(), OnBackPressedCallback {
 
     private var currentNavController: LiveData<NavController>? = null
 
@@ -23,7 +23,7 @@ class MainFragment : BaseFragment(), OnBackPressedCallback {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View
-            = inflater.inflate(R.layout.fragment_main, container, false)
+            = inflater.inflate(R.layout.fragment_main_flow, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +43,8 @@ class MainFragment : BaseFragment(), OnBackPressedCallback {
     private fun setupBottomNavigationBar() {
         currentNavController = bottom_navigation_view.setupWithNavController(
                 navGraphIds = listOf(
-                    R.navigation.goods_tab_nav_graph
+                    R.navigation.goods_tab_nav_graph,
+                    R.navigation.about_tab_nav_graph
                 ),
                 fragmentManager = childFragmentManager,
                 containerId = R.id.main_nav_host_container,

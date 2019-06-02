@@ -12,12 +12,12 @@ import androidx.navigation.fragment.findNavController
 import by.gomel.marseille.core.base.view.BaseFragment
 import by.gomel.marseille.feature.goods.R
 import by.gomel.marseille.feature.goods.navigation.IGoodsFlowCoordinator
-import kotlinx.android.synthetic.main.fragment_goods.*
+import kotlinx.android.synthetic.main.fragment_goods_flow.*
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.android.inject
 
 
-class GoodsFragment : BaseFragment(), OnBackPressedCallback {
+class GoodsFlowFragment : BaseFragment(), OnBackPressedCallback {
 
     private val navController by lazy {
         childFragmentManager.findFragmentById(R.id.goods_nav_host_fragment)?.findNavController()!!
@@ -31,7 +31,7 @@ class GoodsFragment : BaseFragment(), OnBackPressedCallback {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View?
-            = inflater.inflate(R.layout.fragment_goods, container, false)
+            = inflater.inflate(R.layout.fragment_goods_flow, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,10 +49,10 @@ class GoodsFragment : BaseFragment(), OnBackPressedCallback {
 
 }
 
-val GoodsFragment.isBackButtonVisible
+val GoodsFlowFragment.isBackButtonVisible
     get() = goods_toolbar.navigationIcon != null
 
-fun GoodsFragment.showBackButton() {
+fun GoodsFlowFragment.showBackButton() {
     if (isBackButtonVisible) return
     goods_toolbar.run {
         setNavigationIcon(R.drawable.icon_back)
@@ -60,7 +60,7 @@ fun GoodsFragment.showBackButton() {
     }
 }
 
-fun GoodsFragment.hideBackButton() {
+fun GoodsFlowFragment.hideBackButton() {
     if (!isBackButtonVisible) return
     goods_toolbar.run{
         navigationIcon = null
@@ -68,7 +68,7 @@ fun GoodsFragment.hideBackButton() {
     }
 }
 
-fun GoodsFragment.showToolbarMenu(@MenuRes menu: Int, onClick: (item: MenuItem) -> Boolean) {
+fun GoodsFlowFragment.showToolbarMenu(@MenuRes menu: Int, onClick: (item: MenuItem) -> Boolean) {
     hideToolbarMenu()
     goods_toolbar.run {
         inflateMenu(menu)
@@ -76,9 +76,9 @@ fun GoodsFragment.showToolbarMenu(@MenuRes menu: Int, onClick: (item: MenuItem) 
     }
 }
 
-fun GoodsFragment.hideToolbarMenu() = goods_toolbar.menu.clear()
-fun GoodsFragment.setTitle(@StringRes title: Int) = goods_toolbar.setTitle(title)
-fun GoodsFragment.setTitle(title: String) = goods_toolbar.setTitle(title)
+fun GoodsFlowFragment.hideToolbarMenu() = goods_toolbar.menu.clear()
+fun GoodsFlowFragment.setTitle(@StringRes title: Int) = goods_toolbar.setTitle(title)
+fun GoodsFlowFragment.setTitle(title: String) = goods_toolbar.setTitle(title)
 
-fun GoodsFragment.showCart() = cart_button.show()
-fun GoodsFragment.hideCart() = cart_button.hide()
+fun GoodsFlowFragment.showCart() = cart_button.show()
+fun GoodsFlowFragment.hideCart() = cart_button.hide()

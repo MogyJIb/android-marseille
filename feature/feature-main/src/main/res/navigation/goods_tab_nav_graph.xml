@@ -11,10 +11,10 @@
 
     <fragment
         android:id="@+id/goods_fragment"
-        android:name="by.gomel.marseille.feature.goods.presentation.GoodsFragment"
+        android:name="by.gomel.marseille.feature.goods.presentation.GoodsFlowFragment"
         android:label="goods_fragment"
 
-        tools:layout="@layout/fragment_goods"
+        tools:layout="@layout/fragment_goods_flow"
         />
 
 </navigation>

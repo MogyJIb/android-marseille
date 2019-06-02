@@ -5,17 +5,15 @@ import android.view.MenuItem
 import android.view.View
 import androidx.annotation.MenuRes
 import androidx.annotation.StringRes
-import androidx.navigation.fragment.findNavController
 import by.gomel.marseille.core.base.view.BaseFragment
 import by.gomel.marseille.feature.goods.navigation.IGoodsFlowCoordinator
 import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
 
 abstract class BaseGoodsFragment : BaseFragment() {
 
     override val coordinator: IGoodsFlowCoordinator by inject()
     private val goodsFragment
-        get() = parentFragment as? GoodsFragment ?: parentFragment?.parentFragment as? GoodsFragment
+        get() = parentFragment as? GoodsFlowFragment ?: parentFragment?.parentFragment as? GoodsFlowFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         goodsFragment ?: throw IllegalStateException("${this::class.java} - expected parent:goodsFragment," +

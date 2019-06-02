@@ -11,13 +11,13 @@ import by.gomel.marseille.feature.splash.navigation.ISplashFlowCoordinator
 import org.koin.android.ext.android.inject
 
 
-class SplashFragment : BaseFragment(), SplashContract.View {
+class SplashFlowFragment : BaseFragment(), SplashContract.View {
 
     override val presenter: SplashContract.Presenter by inject()
     override val coordinator: ISplashFlowCoordinator by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View?
-        = inflater.inflate(R.layout.fragment_splash, container, false)
+        = inflater.inflate(R.layout.fragment_splash_flow, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
