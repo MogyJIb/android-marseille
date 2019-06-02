@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/primary"
+        android:layout_marginBottom="-10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_130dp"
+            android:layout_marginTop="@dimen/_32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/marseille_logo"
+            android:scaleType="fitCenter"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/detail_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/tab_layout_background"
+
+                style="@style/Widget.MaterialComponents.TabLayout"
+
+                app:tabPaddingStart="0dp"
+                app:tabPaddingEnd="0dp"
+                app:tabIndicatorHeight="0dp"
+                app:tabBackground="@drawable/tab_background"
+                app:tabSelectedTextColor="@color/text_primary_inverse"
+                app:tabTextColor="@color/accent"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tab_layout_background"
+            />
+
+    </FrameLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/detail_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+</LinearLayout>

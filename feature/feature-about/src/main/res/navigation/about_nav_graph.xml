@@ -6,8 +6,15 @@
 
     android:id="@+id/about_navigation_graph"
 
+    app:startDestination="@id/detail_fragment"
     >
 
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="by.gomel.marseille.feature.about.presentation.detail.DetailFragment"
+        android:label="detail_fragment"
 
+        tools:layout="@layout/fragment_detail"
+        />
 
 </navigation>
