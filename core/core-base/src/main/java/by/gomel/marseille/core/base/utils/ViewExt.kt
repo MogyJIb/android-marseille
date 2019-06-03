@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 
 
-inline fun <reified T : View> View.bind(@IdRes id: Int)
-        = lazy(LazyThreadSafetyMode.NONE) { this.findViewById(id) as T }
+inline fun <reified T : View> View.bind(@IdRes id: Int) = this.findViewById(id) as T
 
 inline fun <reified T : View> Fragment.bindView(@IdRes id: Int)
         = lazy(LazyThreadSafetyMode.NONE) { this.view?.findViewById(id) as T }

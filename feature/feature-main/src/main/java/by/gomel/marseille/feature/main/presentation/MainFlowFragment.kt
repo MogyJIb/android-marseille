@@ -43,6 +43,7 @@ class MainFlowFragment : BaseFragment(), OnBackPressedCallback {
     private fun setupBottomNavigationBar() {
         currentNavController = bottom_navigation_view.setupWithNavController(
                 navGraphIds = listOf(
+                    R.navigation.service_tab_nav_graph,
                     R.navigation.goods_tab_nav_graph,
                     R.navigation.about_tab_nav_graph
                 ),

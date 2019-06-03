@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="toast_employee_selected">Сотрудник был успешно выбран</string>
+
+</resources>

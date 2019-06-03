@@ -5,25 +5,25 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import by.gomel.marseille.core.base.view.BaseRecyclerViewAdapter
 import by.gomel.marseille.core.base.view.BaseViewHolder
-import by.gomel.marseille.data.models.CartDto
+import by.gomel.marseille.data.models.GoodsCartDto
 import by.gomel.marseille.feature.goods.R
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.cart_list_item.view.*
 import org.koin.standalone.inject
 
 
-class CartAdapter : BaseRecyclerViewAdapter<CartDto, CartAdapter.CartViewHolder>() {
+class CartAdapter : BaseRecyclerViewAdapter<GoodsCartDto, CartAdapter.CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.cart_list_item, parent, false)
-        return CartViewHolder(itemView) { item: CartDto -> removeItem(item) }
+        return CartViewHolder(itemView) { item: GoodsCartDto -> removeItem(item) }
     }
 
     class CartViewHolder(
             itemView: View,
-            private val onRemove: (item: CartDto) -> Unit
-    ) : BaseViewHolder<CartDto>(itemView) {
+            private val onRemove: (item: GoodsCartDto) -> Unit
+    ) : BaseViewHolder<GoodsCartDto>(itemView) {
 
         private val presenter: CartItemContract.Presenter by inject()
 
@@ -36,7 +36,7 @@ class CartAdapter : BaseRecyclerViewAdapter<CartDto, CartAdapter.CartViewHolder>
         private val iconIV = itemView.goods_icon
         private val removeButton = itemView.remove_goods_button
 
-        override fun onDataBinded(data: CartDto) {
+        override fun onDataBinded(data: GoodsCartDto) {
             isAdd.isChecked = data.checked
             isAdd.setOnCheckedChangeListener { _, isChecked ->
                 data.checked = isChecked

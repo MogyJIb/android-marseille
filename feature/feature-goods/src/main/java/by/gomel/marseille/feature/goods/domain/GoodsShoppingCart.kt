@@ -1,17 +1,17 @@
 package by.gomel.marseille.feature.goods.domain
 
-import by.gomel.marseille.data.models.CartDto
+import by.gomel.marseille.data.models.GoodsCartDto
 import by.gomel.marseille.data.models.Goods
 import io.reactivex.subjects.BehaviorSubject
 import java.io.Serializable
 
 
-class ShoppingCart : Serializable {
+class GoodsShoppingCart : Serializable {
 
-    private val cartDtoMap: MutableMap<String, CartDto> = mutableMapOf()
+    private val cartDtoMap: MutableMap<String, GoodsCartDto> = mutableMapOf()
 
     val amount: BehaviorSubject<Double> = BehaviorSubject.create()
-    val cartDtoList: List<CartDto>
+    val cartDtoList: List<GoodsCartDto>
         get() = cartDtoMap.values.toList()
 
     fun add(vararg products: Goods) {
@@ -21,13 +21,13 @@ class ShoppingCart : Serializable {
                     cartDto.count++
                 }
             } else {
-                this.cartDtoMap[product.uid] = CartDto(product, true, 1)
+                this.cartDtoMap[product.uid] = GoodsCartDto(product, true, 1)
             }
         }
         updateAmount()
     }
 
-    fun add(vararg cartDtoList: CartDto) {
+    fun add(vararg cartDtoList: GoodsCartDto) {
         cartDtoList.forEach { cartDto ->
             cartDtoMap[cartDto.goods.uid] = cartDto
         }
@@ -38,14 +38,14 @@ class ShoppingCart : Serializable {
         add(*products)
     }
 
-    fun update(vararg cartDtoList: CartDto) {
+    fun update(vararg cartDtoList: GoodsCartDto) {
         cartDtoList.forEach { cartDto ->
             cartDtoMap[cartDto.goods.uid] = cartDto
         }
         updateAmount()
     }
 
-    fun remove(vararg cartDtoList: CartDto) {
+    fun remove(vararg cartDtoList: GoodsCartDto) {
         cartDtoList.forEach { cartDto ->
             cartDtoMap.remove(cartDto.goods.uid)
         }

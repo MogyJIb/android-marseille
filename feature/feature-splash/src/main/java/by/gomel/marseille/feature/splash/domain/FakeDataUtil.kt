@@ -1,9 +1,6 @@
 package by.gomel.marseille.feature.splash.domain
 
-import by.gomel.marseille.data.models.Goods
-import by.gomel.marseille.data.models.GoodsCategory
-import by.gomel.marseille.data.models.Service
-import by.gomel.marseille.data.models.ServiceCategory
+import by.gomel.marseille.data.models.*
 
 
 fun fakeServices() = listOf(
@@ -170,7 +167,8 @@ fun fakeServices() = listOf(
                 maxPrice = -1.0)
 )
 
-fun fakeProducts() = listOf(
+
+fun fakeGoods() = listOf(
         Goods(category = GoodsCategory.ITALY,
                 name = "Energizing blend conditioner",
                 imageUrl = "https://static.tildacdn.com/tild6439-3532-4463-b133-353861396433/img_2018-09-03_17-36.jpg",
@@ -198,4 +196,26 @@ fun fakeProducts() = listOf(
                         "\n" +
                         "Применение: Необходимое количество средства нанести на чистые влажные волосы. Приступить к укладке.",
                 price = 31.0)
+)
+
+
+fun fakeEmployees() = listOf(
+        Employee(
+                ServiceCategory.HAIR,
+                "Юля Башилова",
+                "Парикмахер",
+                "https://static.tildacdn.com/tild3439-3738-4664-b962-313965393065/IMG_3483.JPG"
+        ),
+        Employee(
+                ServiceCategory.HAIR,
+                "Ирина Якименко",
+                "Парикмахер",
+                "https://static.tildacdn.com/tild3965-3562-4531-a235-626432303533/IMG_3876.JPG"
+        ),
+        Employee(
+                ServiceCategory.MANICURE,
+                "Олеся Булах",
+                "Мастер ногтевого сервиса",
+                "https://static.tildacdn.com/tild6565-6264-4238-b133-323465656134/IMG_3301.JPG"
+        )
 )

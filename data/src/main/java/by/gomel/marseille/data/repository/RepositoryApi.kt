@@ -8,5 +8,6 @@ class RepositoryApi(
 
     override fun goods() = GoodsRepository(db.goodsDao())
     override fun services() = ServiceRepository(db.serviceDao())
+    override fun employees() = EmployeeRepository(db.employeeDao())
 
 }

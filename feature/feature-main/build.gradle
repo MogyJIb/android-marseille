@@ -7,6 +7,7 @@ dependencies {
     implementation project(Modules.coreBase)
     implementation project(Modules.featureGoods)
     implementation project(Modules.featureAbout)
+    implementation project(Modules.featureService)
 
     implementation Libraries.appcompat
     implementation Libraries.coreKtx

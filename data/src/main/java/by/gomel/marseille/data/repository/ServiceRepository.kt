@@ -29,5 +29,8 @@ class ServiceRepository(
             = Observable.fromCallable { serviceDao.delete(*serviceIds) }
 
     fun categories(): Observable<List<ServiceCategory>>
-            = Observable.fromCallable { ServiceCategory.values().toList() }
+            = Observable.fromCallable { listOf(
+                ServiceCategory.HAIR, ServiceCategory.MANICURE, ServiceCategory.PEDICURE,
+                ServiceCategory.TOOL_SHARPENING, ServiceCategory.MAGIC_WHITE, ServiceCategory.MAKE_UP
+            ) }
 }

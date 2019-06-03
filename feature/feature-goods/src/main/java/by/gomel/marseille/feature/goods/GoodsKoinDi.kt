@@ -1,6 +1,6 @@
 package by.gomel.marseille.feature.goods
 
-import by.gomel.marseille.feature.goods.domain.ShoppingCart
+import by.gomel.marseille.feature.goods.domain.GoodsShoppingCart
 import by.gomel.marseille.feature.goods.domain.GetGoodsCategoriesUseCase
 import by.gomel.marseille.feature.goods.domain.GetGoodsUseCase
 import by.gomel.marseille.feature.goods.navigation.GoodsFlowCoordinator
@@ -25,7 +25,7 @@ object GoodsKoinDi {
 }
 
 private val goodsModule = module {
-    single { ShoppingCart() }
+    single { GoodsShoppingCart() }
     single { GetGoodsCategoriesUseCase(get()) }
     single { GetGoodsUseCase(get()) }
     single { GoodsFlowCoordinator(getProperty("goodsNavController")) as IGoodsFlowCoordinator }

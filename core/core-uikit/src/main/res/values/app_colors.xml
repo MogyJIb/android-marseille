@@ -14,6 +14,9 @@
     <color name="text_primary_inverse">#FFFFFF</color>
     <color name="error">#c20007</color>
     <color name="toast_background">#F2F64CA2</color>
-    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#f64ca2</color>
+
+    <color name="chip_background">#46F64CA2</color>
+    <color name="chip_background_selected">#F64CA2</color>
 
 </resources>

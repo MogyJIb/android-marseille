@@ -5,13 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import by.gomel.marseille.data.models.Goods
-import by.gomel.marseille.data.models.GoodsCategoryTypeConverter
-import by.gomel.marseille.data.models.Service
-import by.gomel.marseille.data.models.ServiceCategoryTypeConverter
+import by.gomel.marseille.data.models.*
 
 
-@Database(entities = [Goods::class, Service::class], version = 1)
+@Database(entities = [Goods::class, Service::class, Employee::class], version = 1)
 @TypeConverters(ServiceCategoryTypeConverter::class, GoodsCategoryTypeConverter::class)
 abstract class DatabaseApi : RoomDatabase() {
 
@@ -25,5 +22,6 @@ abstract class DatabaseApi : RoomDatabase() {
 
     abstract fun goodsDao(): GoodsDao
     abstract fun serviceDao(): ServiceDao
+    abstract fun employeeDao(): EmployeeDao
 
 }

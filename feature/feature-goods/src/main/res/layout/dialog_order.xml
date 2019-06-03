@@ -51,7 +51,7 @@
             android:layout_marginTop="@dimen/_16dp"
             android:hint="Имя"
 
-            style="@style/Widget.AppTheme.TextInputLayout"
+            style="@style/Widget.AppTheme.TextInputLayout.Inverse"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,7 +68,7 @@
             android:layout_marginTop="@dimen/_16dp"
             android:hint="Email"
 
-            style="@style/Widget.AppTheme.TextInputLayout"
+            style="@style/Widget.AppTheme.TextInputLayout.Inverse"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -85,7 +85,7 @@
             android:layout_marginTop="@dimen/_16dp"
             android:hint="Телефон"
 
-            style="@style/Widget.AppTheme.TextInputLayout"
+            style="@style/Widget.AppTheme.TextInputLayout.Inverse"
             >
 
             <com.google.android.material.textfield.TextInputEditText

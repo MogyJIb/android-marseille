@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import by.gomel.marseille.core.base.utils.addItemDecoration
 import by.gomel.marseille.core.base.utils.hide
 import by.gomel.marseille.core.base.utils.show
 import by.gomel.marseille.core.base.utils.toast
 import by.gomel.marseille.core.base.view.InfoDialog
-import by.gomel.marseille.data.models.CartDto
+import by.gomel.marseille.data.models.GoodsCartDto
 import by.gomel.marseille.feature.goods.R
 import by.gomel.marseille.feature.goods.presentation.BaseGoodsFragment
 import kotlinx.android.synthetic.main.fragment_cart.*
@@ -73,7 +72,7 @@ class CartFragment : BaseGoodsFragment(), CartContract.View {
         super.onDestroyView()
     }
 
-    override fun updateCartDtoList(services: List<CartDto>) {
+    override fun updateCartDtoList(services: List<GoodsCartDto>) {
         if (services.isEmpty())
             empty_view.show()
         else

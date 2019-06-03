@@ -20,7 +20,7 @@ class GoodsListFragment : BaseGoodsFragment(), GoodsListContract.View {
 
     override val presenter: GoodsListContract.Presenter by inject()
 
-    private lateinit var serviceAdapter: GoodsAdapter
+    private lateinit var goodsAdapter: GoodsAdapter
 
     companion object {
         @JvmStatic
@@ -35,10 +35,10 @@ class GoodsListFragment : BaseGoodsFragment(), GoodsListContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        serviceAdapter = GoodsAdapter().apply { onClickListener = coordinator::toDetail }
+        goodsAdapter = GoodsAdapter().apply { onClickListener = coordinator::toDetail }
 
         goods_recycler_view.apply {
-            adapter = serviceAdapter
+            adapter = goodsAdapter
             addItemDecoration(DividerItemDecoration.VERTICAL, R.drawable.list_divider)
         }
 
@@ -48,7 +48,7 @@ class GoodsListFragment : BaseGoodsFragment(), GoodsListContract.View {
         }
     }
 
-    override fun updateGoods(goods: List<Goods>) = serviceAdapter.updateItems(goods.toMutableList())
+    override fun updateGoods(goods: List<Goods>) = goodsAdapter.updateItems(goods.toMutableList())
     override fun isShowBackButton() = true
 
 }

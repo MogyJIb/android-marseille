@@ -2,14 +2,14 @@ package by.gomel.marseille.feature.goods.presentation.cart
 
 import by.gomel.marseille.core.base.utils.async
 import by.gomel.marseille.core.base.view.BasePresenter
-import by.gomel.marseille.data.models.CartDto
-import by.gomel.marseille.feature.goods.domain.ShoppingCart
+import by.gomel.marseille.data.models.GoodsCartDto
+import by.gomel.marseille.feature.goods.domain.GoodsShoppingCart
 import io.reactivex.Observable
 import io.reactivex.rxkotlin.plusAssign
 
 
 class CartPresenter(
-        private val shoppingCart: ShoppingCart
+        private val shoppingCart: GoodsShoppingCart
 ) : BasePresenter<CartContract.View>(), CartContract.Presenter {
 
     override fun initData() {
@@ -31,7 +31,7 @@ class CartPresenter(
         view?.updateCartDtoList(shoppingCart.cartDtoList)
     }
 
-    override fun onItemDeleteButtonClicked(cardDto: CartDto) {
+    override fun onItemDeleteButtonClicked(cardDto: GoodsCartDto) {
         shoppingCart.remove(cardDto)
         view?.updateCartDtoList(shoppingCart.cartDtoList)
     }

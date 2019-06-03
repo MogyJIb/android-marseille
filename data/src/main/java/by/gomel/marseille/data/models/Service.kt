@@ -1,9 +1,11 @@
 package by.gomel.marseille.data.models
 
+import androidx.annotation.DrawableRes
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
+import by.gomel.marseille.data.R
 import java.io.Serializable
 import java.util.*
 
@@ -25,8 +27,8 @@ data class Service (
     @PrimaryKey
     var uid: String = UUID.randomUUID().toString()
 ): Serializable {
-    val price: String
-        get() = "$minPrice" + (if (maxPrice < 0) "" else " - $maxPrice") + " P"
+    val price: Double
+        get() = if (maxPrice < 0) minPrice else maxPrice
 
     constructor() : this(ServiceCategory.HAIR, "", 0.0, 0.0, "")
 }
@@ -34,14 +36,15 @@ data class Service (
 
 
 enum class ServiceCategory(
-        val title: String
+        val title: String,
+        val iconUrl: String
 ) {
-    HAIR("Парикмахерские услуги"),
-    MANICURE("Маникюр"),
-    PEDICURE("Педикюр"),
-    MAKE_UP("Макияж"),
-    MAGIC_WHITE("Косметическое отбеливание зубов"),
-    TOOL_SHARPENING("Заточка парикмахерского и маникюрного инструмента")
+    HAIR("Парикмахерские услуги", ""),
+    MANICURE("Маникюр", "https://i.imgur.com/INtMaEo.jpg"),
+    PEDICURE("Педикюр", ""),
+    MAKE_UP("Макияж", ""),
+    MAGIC_WHITE("Отбеливание зубов", ""),
+    TOOL_SHARPENING("Заточка инструмента", "")
 }
 
 
