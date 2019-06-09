@@ -1,5 +1,6 @@
 package by.gomel.marseille.feature.goods.presentation.cart
 
+import by.gomel.marseille.core.base.utils.ConnectionReceiver
 import by.gomel.marseille.core.base.utils.async
 import by.gomel.marseille.core.base.view.BasePresenter
 import by.gomel.marseille.data.models.GoodsCartDto
@@ -9,8 +10,9 @@ import io.reactivex.rxkotlin.plusAssign
 
 
 class CartPresenter(
+        connectionReceiver: ConnectionReceiver,
         private val shoppingCart: GoodsShoppingCart
-) : BasePresenter<CartContract.View>(), CartContract.Presenter {
+) : BasePresenter<CartContract.View>(connectionReceiver), CartContract.Presenter {
 
     override fun initData() {
         disposables += Observable.just(shoppingCart.cartDtoList)

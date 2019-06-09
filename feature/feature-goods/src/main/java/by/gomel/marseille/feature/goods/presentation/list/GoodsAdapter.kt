@@ -3,6 +3,7 @@ package by.gomel.marseille.feature.goods.presentation.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import by.gomel.marseille.core.base.utils.toast
 import by.gomel.marseille.core.base.view.BaseRecyclerViewAdapter
 import by.gomel.marseille.core.base.view.BaseViewHolder
 import by.gomel.marseille.data.models.Goods

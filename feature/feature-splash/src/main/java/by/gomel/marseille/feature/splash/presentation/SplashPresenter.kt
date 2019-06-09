@@ -1,5 +1,6 @@
 package by.gomel.marseille.feature.splash.presentation
 
+import by.gomel.marseille.core.base.utils.ConnectionReceiver
 import by.gomel.marseille.core.base.utils.async
 import by.gomel.marseille.core.base.view.BasePresenter
 import by.gomel.marseille.data.repository.IRepository
@@ -15,8 +16,9 @@ import java.util.concurrent.TimeUnit
 
 
 class SplashPresenter(
+        connectionReceiver: ConnectionReceiver,
         private val repository: IRepository
-) : BasePresenter<SplashContract.View>(), SplashContract.Presenter {
+) : BasePresenter<SplashContract.View>(connectionReceiver), SplashContract.Presenter {
 
     override fun initData() {
         disposables += Observable

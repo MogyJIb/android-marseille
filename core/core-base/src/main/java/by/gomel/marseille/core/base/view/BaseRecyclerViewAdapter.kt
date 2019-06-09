@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import by.gomel.marseille.core.base.utils.OnClickListener
 import by.gomel.marseille.core.base.utils.OnLongClickListener
+import by.gomel.marseille.core.base.utils.toast
 import org.koin.standalone.KoinComponent
 
 
@@ -101,6 +102,8 @@ abstract class BaseViewHolder<T : Any>(
     }
 
     abstract fun onDataBinded(data: T)
+
+    override fun showError(message: String) = itemView.context.toast(message)
 
 }
 

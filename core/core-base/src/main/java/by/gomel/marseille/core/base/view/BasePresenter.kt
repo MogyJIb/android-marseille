@@ -1,10 +1,13 @@
 package by.gomel.marseille.core.base.view
 
+import by.gomel.marseille.core.base.utils.ConnectionReceiver
 import by.gomel.marseille.core.base.utils.className
 import io.reactivex.disposables.CompositeDisposable
 
 
-abstract class BasePresenter<V : Any> : BaseContract.Presenter {
+abstract class BasePresenter<V : BaseContract.View>(
+        private val connectionReceiver: ConnectionReceiver
+) : BaseContract.Presenter {
 
     protected var view: V? = null
     protected lateinit var disposables: CompositeDisposable
@@ -19,6 +22,14 @@ abstract class BasePresenter<V : Any> : BaseContract.Presenter {
     override fun unbind() {
         disposables.dispose()
         view = null
+    }
+
+    override fun handleError(error: Throwable) {
+        super.handleError(error)
+
+        if (!connectionReceiver.existInternetConnection())
+            view?.showError("Интернет соединение отсутствует или потеряно, пожалуйста, проверьте настройки.")
+
     }
 
 }

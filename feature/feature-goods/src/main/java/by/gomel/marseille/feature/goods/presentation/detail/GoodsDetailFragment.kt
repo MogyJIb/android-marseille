@@ -1,5 +1,6 @@
 package by.gomel.marseille.feature.goods.presentation.detail
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,10 @@ import by.gomel.marseille.data.models.Goods
 import by.gomel.marseille.feature.goods.R
 import by.gomel.marseille.feature.goods.presentation.BaseGoodsFragment
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.fragment_goods_details.*
 import org.koin.android.ext.android.inject
 
@@ -38,7 +43,15 @@ class GoodsDetailFragment : BaseGoodsFragment(), GoodsDetailContract.View {
             goods = this
             setTitle(name)
             goods_description.text = description
-            runCatching { Glide.with(this@GoodsDetailFragment).load(imageUrl).into(goods_icon) }
+            Glide.with(this@GoodsDetailFragment)
+                .load(imageUrl)
+                .listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean)
+                            = false.also { e?.let { presenter.handleError(it) } }
+
+                    override fun onResourceReady(res: Drawable?, m: Any?, t: Target<Drawable>?, d: DataSource?, i: Boolean) = false
+                })
+                .into(goods_icon)
             goods_price.text = "$price BIN"
         }
 

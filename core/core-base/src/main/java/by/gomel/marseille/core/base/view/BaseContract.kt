@@ -14,7 +14,9 @@ interface BaseContract {
         }
     }
 
-    interface View
+    interface View {
+        fun showError(message: String)
+    }
 
     interface Coordinator {
         fun navigateUp(): Boolean

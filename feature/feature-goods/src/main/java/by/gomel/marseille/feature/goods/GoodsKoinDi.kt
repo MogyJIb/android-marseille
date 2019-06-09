@@ -30,10 +30,10 @@ private val goodsModule = module {
     single { GetGoodsUseCase(get()) }
     single { GoodsFlowCoordinator(getProperty("goodsNavController")) as IGoodsFlowCoordinator }
 
-    factory { GoodsCategoryPresenter(get()) as GoodsCategoryContract.Presenter }
-    factory { GoodsListPresenter(get()) as GoodsListContract.Presenter }
-    factory { CartPresenter(get()) as CartContract.Presenter }
-    factory { GoodsDetailPresenter(get()) as GoodsDetailContract.Presenter }
-    factory { CartItemPresenter(get()) as CartItemContract.Presenter }
+    factory { GoodsCategoryPresenter(get(), get()) as GoodsCategoryContract.Presenter }
+    factory { GoodsListPresenter(get(), get()) as GoodsListContract.Presenter }
+    factory { CartPresenter(get(), get()) as CartContract.Presenter }
+    factory { GoodsDetailPresenter(get(), get()) as GoodsDetailContract.Presenter }
+    factory { CartItemPresenter(get(), get()) as CartItemContract.Presenter }
 
 }

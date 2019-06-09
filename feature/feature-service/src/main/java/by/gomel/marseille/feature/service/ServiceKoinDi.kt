@@ -30,8 +30,8 @@ private val serviceModule = module {
     single { GetServiceCategoriesUseCase(get()) }
     single { GetServiceUseCase(get()) }
 
-    factory { ServiceListPresenter(get()) as ServiceListContract.Presenter }
-    factory { ServiceItemPresenter(get(), get()) as ServiceItemContract.Presenter }
-    factory { EmployeeListPresenter(get(), get()) as EmployeeListContract.Presenter }
-    factory { ServiceCategoryPresenter(get(), get()) as ServiceCategoryContract.Presenter }
+    factory { ServiceListPresenter(get(), get()) as ServiceListContract.Presenter }
+    factory { ServiceItemPresenter(get(),get(), get()) as ServiceItemContract.Presenter }
+    factory { EmployeeListPresenter(get(),get(), get()) as EmployeeListContract.Presenter }
+    factory { ServiceCategoryPresenter(get(),get(), get()) as ServiceCategoryContract.Presenter }
 }

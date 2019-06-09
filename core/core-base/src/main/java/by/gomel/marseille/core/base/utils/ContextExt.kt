@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import by.gomel.marseille.core.base.R
 
+
 fun Context.toast(text: String)
     = Toast.makeText(this, text, Toast.LENGTH_LONG).apply {
         setGravity(Gravity.CENTER, 0, (-200).dp)
@@ -21,3 +22,4 @@ fun Context.toast(text: String)
         toastMessage.setPadding(16.dp, 32.dp, 16.dp, 32.dp)
     }
     .show()
+

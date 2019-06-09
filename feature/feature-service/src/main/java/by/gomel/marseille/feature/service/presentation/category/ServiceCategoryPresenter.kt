@@ -1,5 +1,6 @@
 package by.gomel.marseille.feature.service.presentation.category
 
+import by.gomel.marseille.core.base.utils.ConnectionReceiver
 import by.gomel.marseille.core.base.view.BasePresenter
 import by.gomel.marseille.feature.service.domain.GetServiceCategoriesUseCase
 import by.gomel.marseille.feature.service.domain.ServiceShoppingCart
@@ -7,9 +8,10 @@ import io.reactivex.rxkotlin.plusAssign
 
 
 class ServiceCategoryPresenter(
+        connectionReceiver: ConnectionReceiver,
         private val getServiceCategoriesUseCase: GetServiceCategoriesUseCase,
         private val cart: ServiceShoppingCart
-) : BasePresenter<ServiceCategoryContract.View>(), ServiceCategoryContract.Presenter {
+) : BasePresenter<ServiceCategoryContract.View>(connectionReceiver), ServiceCategoryContract.Presenter {
 
     override fun loadCategories() {
         disposables += getServiceCategoriesUseCase.getCategoriesFilteredByNameAsync()

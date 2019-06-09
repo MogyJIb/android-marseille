@@ -12,5 +12,5 @@ object SplashKoinDi {
 }
 
 private val splashModule = module {
-    factory { SplashPresenter(get()) as SplashContract.Presenter }
+    factory { SplashPresenter(get(), get()) as SplashContract.Presenter }
 }
