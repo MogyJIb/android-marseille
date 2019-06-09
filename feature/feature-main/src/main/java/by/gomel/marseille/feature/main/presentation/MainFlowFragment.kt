@@ -45,6 +45,7 @@ class MainFlowFragment : BaseFragment(), OnBackPressedCallback {
                 navGraphIds = listOf(
                     R.navigation.service_tab_nav_graph,
                     R.navigation.goods_tab_nav_graph,
+                    R.navigation.order_tab_nav_graph,
                     R.navigation.about_tab_nav_graph
                 ),
                 fragmentManager = childFragmentManager,

@@ -1,4 +1,5 @@
 include ':app',
+        ':test',
         ':buildSrc',
         ':core:core-uikit', ':core:core-base',
         ':data'

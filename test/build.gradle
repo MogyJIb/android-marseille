@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply from: '../android_commons.gradle'
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation project(Modules.coreUiKit)
+    implementation project(Modules.coreBase)
+    implementation project(Modules.featureGoods)
+    implementation project(Modules.featureAbout)
+    implementation project(Modules.featureService)
+    implementation project(Modules.data)
+
+    implementation Libraries.appcompat
+    implementation Libraries.coreKtx
+    implementation Libraries.core
+    implementation Libraries.koin
+    implementation Libraries.rxjava2
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxandroid
+    implementation Libraries.material
+
+    testImplementation Libraries.jUnit
+    androidTestImplementation Libraries.testRunner
+    androidTestImplementation Libraries.espresso
+    testImplementation Libraries.kotlinJUnit
+    testImplementation Libraries.mockito
+    testImplementation Libraries.mockitoInline
+
+    androidTestImplementation Libraries.testCore
+    androidTestImplementation Libraries.testRules
+    androidTestImplementation Libraries.testCoreKtx
+    androidTestImplementation Libraries.testExtJUnit
+    androidTestImplementation Libraries.testExtJUnitKtx
+    androidTestImplementation Libraries.kakao
+
+    testImplementation Libraries.robolectric
+    testImplementation Libraries.espressoIntents
+    testImplementation Libraries.testExtTruth
+}
+

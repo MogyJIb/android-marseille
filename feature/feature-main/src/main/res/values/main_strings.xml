@@ -1,7 +1,8 @@
 <resources>
 
-    <string name="menu_goods_title">Товары</string>
+    <string name="menu_goods_title">Продукция</string>
     <string name="menu_about_title">Контакты</string>
     <string name="menu_service_title">Услуги</string>
+    <string name="menu_order_title">Запись</string>
 
 </resources>

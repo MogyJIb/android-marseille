@@ -18,3 +18,11 @@ fun <T> Single<T>.async(): Single<T>
 fun <T> Flowable<T>.async(): Flowable<T>
         = this.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+
+fun <T> Observable<T>.async(schedulersProvider: SchedulersProvider): Observable<T>
+        = this.subscribeOn(schedulersProvider.io)
+            .observeOn(schedulersProvider.ui)
+
+fun <T> Single<T>.async(schedulersProvider: SchedulersProvider): Single<T>
+        = this.subscribeOn(schedulersProvider.io)
+            .observeOn(schedulersProvider.ui)

@@ -16,6 +16,12 @@
         />
 
     <item
+        android:id="@+id/order_tab_nav_graph"
+        android:icon="@drawable/outline_phone_callback_white_24"
+        android:title="@string/menu_order_title"
+        />
+
+    <item
         android:id="@+id/about_tab_nav_graph"
         android:icon="@drawable/outline_info_white_24"
         android:title="@string/menu_about_title"

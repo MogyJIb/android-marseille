@@ -44,6 +44,15 @@ object Versions {
     val firebase = "16.0.1"
     val mapServices = "16.1.0"
     val room = "2.1.0-rc01"
+
+    val jUnit = "4.12"
+    val testCore = "1.2.0"
+    val espresso = "3.2.0"
+    val mockito = "2.8.9"
+    val testExtJUnit = "1.1.1"
+    val robolectric = "4.3"
+    val testExtTruth = "1.2.0-beta01"
+    val kakao = "2.0.0"
 }
 
 object Libraries {
@@ -95,4 +104,23 @@ object Libraries {
     val roomRxjava2 = "androidx.room:room-rxjava2:${Versions.room}"
     val roomQuava = "androidx.room:room-guava:${Versions.room}"
     val /** TEST */ roomTest = "androidx.room:room-testing:${Versions.room}"
+
+    // Test
+    val /* TEST */ jUnit = "junit:junit:${Versions.jUnit}"
+    val /* ANDROID TEST */ testRunner = "androidx.test:runner:${Versions.testCore}"
+    val /* ANDROID TEST */ espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    val /* TEST */ kotlinJUnit = "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}"
+    val /* TEST */ mockito = "org.mockito:mockito-core:${Versions.mockito}"
+    val /* TEST */ mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
+
+    val /* ANDROID TEST */ testCore = "androidx.test:core:${Versions.testCore}"
+    val /* ANDROID TEST */ testCoreKtx = "androidx.test:core-ktx:${Versions.testCore}"
+    val /* ANDROID TEST */ testRules = "androidx.test:rules:${Versions.testCore}"
+    val /* ANDROID TEST */ testExtJUnit = "androidx.test.ext:junit:${Versions.testExtJUnit}"
+    val /* ANDROID TEST */ testExtJUnitKtx = "androidx.test.ext:junit-ktx:${Versions.testExtJUnit}"
+
+    val /* TEST */ robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    val /* TEST */ espressoIntents = "androidx.test.espresso:espresso-intents:${Versions.espresso}"
+    val /* TEST */ testExtTruth = "androidx.test.ext:truth:${Versions.testExtTruth}"
+    val /* ANDROID TEST */ kakao = "com.agoda.kakao:kakao:${Versions.kakao}"
 }
