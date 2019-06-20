@@ -8,5 +8,6 @@ include ':feature:feature-main',
         ':feature:feature-goods',
         ':feature:feature-splash',
         ':feature:feature-service',
-        ':feature:feature-about'
+        ':feature:feature-about',
+        ':feature:feature-order'
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/order_navigation_graph"
+
+    app:startDestination="@id/free_consultation_fragment"
+    >
+
+    <fragment
+        android:id="@+id/free_consultation_fragment"
+        android:name="by.gomel.marseille.feature.order.presentation.consultation.FreeConsultationFragment"
+        android:label="free_consultation_fragment"
+
+        tools:layout="@layout/fragment_free_consultation"
+        />
+
+</navigation>

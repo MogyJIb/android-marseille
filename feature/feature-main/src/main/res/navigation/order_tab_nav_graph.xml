@@ -6,15 +6,15 @@
 
     android:id="@+id/order_tab_nav_graph"
 
-    app:startDestination="@id/goods_fragment"
+    app:startDestination="@id/order_fragment"
     >
 
     <fragment
-        android:id="@+id/goods_fragment"
-        android:name="by.gomel.marseille.feature.goods.presentation.GoodsFlowFragment"
-        android:label="goods_fragment"
+        android:id="@+id/order_fragment"
+        android:name="by.gomel.marseille.feature.order.presentation.OrderFlowFragment"
+        android:label="order_fragment"
 
-        tools:layout="@layout/fragment_goods_flow"
+        tools:layout="@layout/fragment_order_flow"
         />
 
 </navigation>

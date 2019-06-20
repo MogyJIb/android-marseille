@@ -14,6 +14,7 @@ object Modules {
     val featureSplash = ":feature:feature-splash"
     val featureAbout = ":feature:feature-about"
     val featureService = ":feature:feature-service"
+    val featureOrder = ":feature:feature-order"
 }
 
 object Versions {
