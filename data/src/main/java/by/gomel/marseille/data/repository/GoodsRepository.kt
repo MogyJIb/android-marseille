@@ -11,22 +11,10 @@ class GoodsRepository(
 ) {
     fun getAll(): Observable<List<Goods>> = Observable.fromCallable { goodsDao.getAll() }
 
-    fun get(vararg goodsIds: String): Observable<List<Goods>>
-            = Observable.fromCallable { goodsDao.get(*goodsIds) }
-
     fun get(category: GoodsCategory): Observable<List<Goods>>
             = Observable.fromCallable { goodsDao.get(category) }
 
     fun add(vararg goods: Goods): Observable<Unit> = Observable.fromCallable { goodsDao.insert(*goods) }
-
-    fun update(vararg goods: Goods): Observable<Unit>
-            = Observable.fromCallable { goodsDao.update(*goods) }
-
-    fun delete(vararg goods: Goods): Observable<Unit>
-            = Observable.fromCallable { goodsDao.delete(*goods) }
-
-    fun delete(vararg goodsIds: String): Observable<Unit>
-            = Observable.fromCallable { goodsDao.delete(*goodsIds) }
 
     fun categories(): Observable<List<GoodsCategory>>
             = Observable.fromCallable { GoodsCategory.values().toList() }

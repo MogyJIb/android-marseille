@@ -8,8 +8,8 @@ import androidx.room.TypeConverters
 import by.gomel.marseille.data.models.*
 
 
-@Database(entities = [Goods::class, Service::class, Employee::class], version = 1)
-@TypeConverters(ServiceCategoryTypeConverter::class, GoodsCategoryTypeConverter::class)
+@Database(entities = [Goods::class, Service::class, Employee::class, CompanyAboutDto::class], version = 1)
+@TypeConverters(ServiceCategoryTypeConverter::class, GoodsCategoryTypeConverter::class, PhoneNumbersTypeConverter::class, ReferencesTypeConverter::class)
 abstract class DatabaseApi : RoomDatabase() {
 
     companion object {
@@ -23,5 +23,6 @@ abstract class DatabaseApi : RoomDatabase() {
     abstract fun goodsDao(): GoodsDao
     abstract fun serviceDao(): ServiceDao
     abstract fun employeeDao(): EmployeeDao
+    abstract fun companyAboutDao(): CompanyDtoDao
 
 }

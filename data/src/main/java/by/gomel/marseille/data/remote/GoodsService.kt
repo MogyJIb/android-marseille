@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface GoodsService {
 
     @GET("goods")
-    fun all(): Observable<List<Goods>>
+    fun getAll(): Observable<List<Goods>>
 
 }

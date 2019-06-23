@@ -16,6 +16,12 @@ class RemoteApi(
 
     val goodsService: GoodsService
         get() = retrofit.create(GoodsService::class.java)
+    val employeesService: EmployeesService
+        get() = retrofit.create(EmployeesService::class.java)
+    val companyAboutService: CompanyAboutService
+        get() = retrofit.create(CompanyAboutService::class.java)
+    val servicesService: ServicesService
+        get() = retrofit.create(ServicesService::class.java)
 
     companion object {
         const val BASE_URL = "http://marseille.mycloud.by/"

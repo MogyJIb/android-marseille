@@ -15,4 +15,7 @@ dependencies {
     implementation Libraries.rxjava2
     implementation Libraries.rxkotlin
     implementation Libraries.rxandroid
+
+    implementation Libraries.glide
+    kapt Libraries.glideCompiler
 }
