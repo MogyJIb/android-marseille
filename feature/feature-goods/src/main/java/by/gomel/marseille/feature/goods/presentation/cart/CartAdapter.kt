@@ -71,7 +71,7 @@ class CartAdapter : BaseRecyclerViewAdapter<GoodsCartDto, CartAdapter.CartViewHo
         }
 
         private fun updateCount() {
-            goodsPrice.text = "${data.totalPrice} BIN"
+            goodsPrice.text = "${data.totalPrice} BYN"
             counter.text = data.count.toString()
             presenter.updateCartWithItem(data)
         }

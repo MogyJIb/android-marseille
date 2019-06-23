@@ -9,7 +9,8 @@ import io.reactivex.Observable
 class ServiceRepository(
         private val serviceDao: ServiceDao
 ) {
-    fun getAll(): Observable<List<Service>> = Observable.fromCallable { serviceDao.getAll()  }
+    fun getAll(): Observable<List<Service>> =
+        Observable.fromCallable { serviceDao.getAll() }
 
     fun get(vararg serviceIds: String): Observable<List<Service>>
             = Observable.fromCallable { serviceDao.get(*serviceIds) }
@@ -33,4 +34,7 @@ class ServiceRepository(
                 ServiceCategory.HAIR, ServiceCategory.MANICURE, ServiceCategory.PEDICURE,
                 ServiceCategory.TOOL_SHARPENING, ServiceCategory.MAGIC_WHITE, ServiceCategory.MAKE_UP
             ) }
+
+    fun clear() = Observable.fromCallable { serviceDao.clear() }
+
 }

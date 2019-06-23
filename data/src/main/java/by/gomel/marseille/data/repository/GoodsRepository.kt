@@ -30,4 +30,7 @@ class GoodsRepository(
 
     fun categories(): Observable<List<GoodsCategory>>
             = Observable.fromCallable { GoodsCategory.values().toList() }
+
+    fun clear() = Observable.fromCallable { goodsDao.clear() }
+
 }

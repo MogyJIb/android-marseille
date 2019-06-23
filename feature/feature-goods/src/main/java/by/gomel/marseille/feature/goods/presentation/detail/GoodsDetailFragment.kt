@@ -42,7 +42,7 @@ class GoodsDetailFragment : BaseGoodsFragment(), GoodsDetailContract.View {
         getArgument<Goods>("goods")?.apply {
             goods = this
             setTitle(name)
-            goods_description.text = description
+            goods_description.text = "$description\n\n$ingredients\n\n$formats\n\n$use"
             Glide.with(this@GoodsDetailFragment)
                 .load(imageUrl)
                 .listener(object : RequestListener<Drawable> {
@@ -52,7 +52,7 @@ class GoodsDetailFragment : BaseGoodsFragment(), GoodsDetailContract.View {
                     override fun onResourceReady(res: Drawable?, m: Any?, t: Target<Drawable>?, d: DataSource?, i: Boolean) = false
                 })
                 .into(goods_icon)
-            goods_price.text = "$price BIN"
+            goods_price.text = "$price BYN"
         }
 
         button_add_purchase.setOnClickListener {

@@ -24,4 +24,5 @@ dependencies {
 
     implementation Libraries.glide
     kapt Libraries.glideCompiler
+    compile project(path: ':feature:feature-order')
 }

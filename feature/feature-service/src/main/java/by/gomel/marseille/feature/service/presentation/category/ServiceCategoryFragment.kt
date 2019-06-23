@@ -1,15 +1,18 @@
 package by.gomel.marseille.feature.service.presentation.category
 
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
-import by.gomel.marseille.core.base.utils.bind
 import by.gomel.marseille.core.base.utils.hide
 import by.gomel.marseille.core.base.utils.show
+import by.gomel.marseille.core.base.utils.toast
+import by.gomel.marseille.core.base.view.InfoDialog
 import by.gomel.marseille.data.models.ServiceCategory
+import by.gomel.marseille.feature.order.presentation.dialog.OrderDialogFragment
 import by.gomel.marseille.feature.service.R
 import by.gomel.marseille.feature.service.domain.init
 import by.gomel.marseille.feature.service.presentation.BaseServiceFragment
@@ -36,11 +39,13 @@ class ServiceCategoryFragment : BaseServiceFragment(), ServiceCategoryContract.V
 
         categories_chip_group.setOnCheckedChangeListener { group, checkedId ->
             categories
-                .find { it.title == group.bind<Chip>(checkedId).text }
+                .find { it.title == group.findViewById<Chip>(checkedId)?.text }
                 ?.let {
                     if (selectedCategory != it) {
                         selectedCategory = it
                         presenter.clearCart()
+                    } else {
+                        group.findViewById<Chip>(checkedId)?.isChecked = true
                     }
                 }
         }
@@ -62,7 +67,14 @@ class ServiceCategoryFragment : BaseServiceFragment(), ServiceCategoryContract.V
         choose_employee.setOnClickListener {
             selectedCategory?.run { coordinator.toEmployeeList(this) }
         }
-
+        buy_button.setOnClickListener {
+            OrderDialogFragment.newInstance().apply {
+                rightButtonListener = DialogInterface.OnClickListener { _, _ ->
+                    context?.toast("Ваш заказ успешно оформлен, ожидайте обратной связи")
+                    presenter.clearCart()
+                }
+            }.show(childFragmentManager, InfoDialog::class.java.simpleName)
+        }
         clear_button.setOnClickListener { presenter.clearCart() }
     }
 

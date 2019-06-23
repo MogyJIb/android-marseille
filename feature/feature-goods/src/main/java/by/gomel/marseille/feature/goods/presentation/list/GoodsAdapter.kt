@@ -33,7 +33,7 @@ class GoodsViewHolder(
 
     override fun onDataBinded(data: Goods) {
         nameTV.text = data.name
-        priceTV.text = "${data.price} BIN"
+        priceTV.text = "${data.price} BYN"
 
         runCatching {
             Glide.with(itemView)

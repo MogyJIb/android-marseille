@@ -175,7 +175,7 @@
                 android:id="@+id/amount_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 BIN"
+                android:text="0 BYN"
                 android:layout_marginRight="@dimen/_16dp"
                 />
 

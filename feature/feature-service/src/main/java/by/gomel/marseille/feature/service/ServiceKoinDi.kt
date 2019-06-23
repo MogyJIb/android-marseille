@@ -1,5 +1,6 @@
 package by.gomel.marseille.feature.service
 
+import by.gomel.marseille.feature.order.OrderKoinDi
 import by.gomel.marseille.feature.service.domain.GetEmployeeUseCase
 import by.gomel.marseille.feature.service.domain.GetServiceCategoriesUseCase
 import by.gomel.marseille.feature.service.domain.GetServiceUseCase
@@ -19,7 +20,7 @@ import org.koin.dsl.module.module
 
 object ServiceKoinDi {
 
-    val modules = arrayOf(serviceModule)
+    val modules = arrayOf(serviceModule, *OrderKoinDi.modules)
 
 }
 

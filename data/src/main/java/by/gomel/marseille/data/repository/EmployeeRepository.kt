@@ -30,4 +30,7 @@ class EmployeeRepository(
 
     fun categories(): Observable<List<ServiceCategory>>
             = Observable.fromCallable { ServiceCategory.values().toList() }
+
+    fun clear() = Observable.fromCallable { employeeDao.clear() }
+
 }

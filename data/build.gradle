@@ -14,4 +14,13 @@ dependencies {
     implementation Libraries.roomRxjava2
     implementation Libraries.roomQuava
     testImplementation Libraries.roomTest
+
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitGsonConverter
+    implementation Libraries.retrofitRxJavaAdapter
+
+    implementation Libraries.okhttp3
+    implementation Libraries.okhttp3LoggingInterceptor
+
+    implementation Libraries.gson
 }

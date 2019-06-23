@@ -50,7 +50,7 @@
                     android:padding="@dimen/_8dp"
                     android:textColor="@color/text_primary_inverse"
                     android:textSize="@dimen/_17sp"
-                    android:text="0.0 BIN"
+                    android:text="0.0 BYN"
                     android:textStyle="bold|italic"
                     />
 

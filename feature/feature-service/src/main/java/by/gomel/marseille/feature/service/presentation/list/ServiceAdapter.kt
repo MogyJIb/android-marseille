@@ -35,7 +35,7 @@ class ServiceViewHolder(
 
     override fun onDataBinded(data: Service) {
         nameTV.text = data.name
-        priceTV.text = "${data.price} BIN"
+        priceTV.text = "${data.price} BYN"
         checkBox.apply {
             isChecked = presenter.checkServiceInCart(data)
             setOnCheckedChangeListener { _, isChecked -> presenter.onChecked(data, isChecked) }

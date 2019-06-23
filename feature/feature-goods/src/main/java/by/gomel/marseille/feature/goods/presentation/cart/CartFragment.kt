@@ -14,6 +14,7 @@ import by.gomel.marseille.core.base.view.InfoDialog
 import by.gomel.marseille.data.models.GoodsCartDto
 import by.gomel.marseille.feature.goods.R
 import by.gomel.marseille.feature.goods.presentation.BaseGoodsFragment
+import by.gomel.marseille.feature.order.presentation.dialog.OrderDialogFragment
 import kotlinx.android.synthetic.main.fragment_cart.*
 import org.koin.android.ext.android.inject
 

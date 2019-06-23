@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="empty_email_error">Поле не должно быть пустым</string>
+    <string name="empty_name_error">Поле не должно быть пустым</string>
+    <string name="empty_phone_error">Поле не должно быть пустым</string>
+    <string name="wrong_email_error">Неверный формат данных (пример: email@google.com)</string>
+
+</resources>

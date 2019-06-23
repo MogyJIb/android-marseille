@@ -12,7 +12,7 @@ class GetGoodsUseCase(
 ) {
 
     fun getGoodsFilteredByNameAsync(category: GoodsCategory): Observable<List<Goods>>
-            = repository.goods().get(category)
+        = repository.goods().get(category)
             .flatMap { list ->
                 Observable.fromIterable(list)
                         .sorted(compareBy { service -> service.name })

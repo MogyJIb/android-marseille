@@ -29,4 +29,7 @@ interface GoodsDao {
     @Query("DELETE FROM goods WHERE uid IN (:goodsIds)")
     fun delete(vararg goodsIds: String)
 
+    @Query("DELETE FROM goods")
+    fun clear()
+
 }

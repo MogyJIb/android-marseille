@@ -29,4 +29,7 @@ interface ServiceDao {
     @Query("DELETE FROM services WHERE uid IN (:serviceIds)")
     fun delete(vararg serviceIds: String)
 
+    @Query("DELETE FROM services")
+    fun clear()
+
 }

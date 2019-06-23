@@ -29,4 +29,7 @@ interface EmployeeDao {
     @Query("DELETE FROM employees WHERE uid IN (:employeeIds)")
     fun delete(vararg employeeIds: String)
 
+    @Query("DELETE FROM employees")
+    fun clear()
+
 }

@@ -15,12 +15,13 @@ import by.gomel.marseille.feature.goods.presentation.detail.GoodsDetailContract
 import by.gomel.marseille.feature.goods.presentation.detail.GoodsDetailPresenter
 import by.gomel.marseille.feature.goods.presentation.list.GoodsListContract
 import by.gomel.marseille.feature.goods.presentation.list.GoodsListPresenter
+import by.gomel.marseille.feature.order.OrderKoinDi
 import org.koin.dsl.module.module
 
 
 object GoodsKoinDi {
 
-    val modules = arrayOf(goodsModule)
+    val modules = arrayOf(goodsModule, *OrderKoinDi.modules)
 
 }
 

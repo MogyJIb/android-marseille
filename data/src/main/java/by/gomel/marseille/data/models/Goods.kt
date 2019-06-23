@@ -25,12 +25,21 @@ data class Goods (
     @ColumnInfo(name="description")
     var description: String,
 
+    @ColumnInfo(name="ingredients")
+    var ingredients: String,
+
+    @ColumnInfo(name="formats")
+    var formats: String,
+
+    @ColumnInfo(name="use")
+    var use: String,
+
     @ColumnInfo(name = "uid")
     @PrimaryKey
     var uid: String = UUID.randomUUID().toString()
 ): Serializable {
 
-    constructor() : this(GoodsCategory.ISRAEL, "", 0.0, "", "", "")
+    constructor() : this(GoodsCategory.ISRAEL, "", 0.0,"","","", "", "")
 
 }
 

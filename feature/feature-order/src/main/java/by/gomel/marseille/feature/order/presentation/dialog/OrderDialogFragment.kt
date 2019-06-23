@@ -1,18 +1,30 @@
-package by.gomel.marseille.feature.goods.presentation.cart
+package by.gomel.marseille.feature.order.presentation.dialog
 
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import by.gomel.marseille.core.base.utils.hideErrorOnTextChange
 import by.gomel.marseille.core.base.view.BaseDialogFragment
-import by.gomel.marseille.feature.goods.R
+import by.gomel.marseille.feature.order.R
 import kotlinx.android.synthetic.main.dialog_order.*
+import kotlinx.android.synthetic.main.dialog_order.email_edit_text
+import kotlinx.android.synthetic.main.dialog_order.email_input_layout
+import kotlinx.android.synthetic.main.dialog_order.name_edit_text
+import kotlinx.android.synthetic.main.dialog_order.name_input_layout
+import kotlinx.android.synthetic.main.dialog_order.phone_edit_text
+import kotlinx.android.synthetic.main.dialog_order.phone_input_layout
+import org.koin.android.ext.android.inject
 
 
-class OrderDialogFragment : BaseDialogFragment(), DialogInterface {
+class OrderDialogFragment : BaseDialogFragment(), DialogInterface, OrderDiaogContract.View {
+
+    override val presenter: OrderDiaogContract.Presenter by inject()
+
     var leftButtonListener: DialogInterface.OnClickListener? = null
     var rightButtonListener: DialogInterface.OnClickListener? = null
 
@@ -40,11 +52,18 @@ class OrderDialogFragment : BaseDialogFragment(), DialogInterface {
         }
 
         button_right.setOnClickListener {
+            if (!presenter.validate(name_edit_text.text, email_edit_text.text, phone_edit_text.text))
+                return@setOnClickListener
+
             rightButtonListener?.run {
                 onClick(this@OrderDialogFragment, DialogInterface.BUTTON_POSITIVE)
             }
             dismiss()
         }
+
+        name_input_layout.hideErrorOnTextChange()
+        email_input_layout.hideErrorOnTextChange()
+        phone_input_layout.hideErrorOnTextChange()
     }
 
     override fun onDestroy() {
@@ -55,5 +74,23 @@ class OrderDialogFragment : BaseDialogFragment(), DialogInterface {
     }
 
     override fun cancel() = dismiss()
+
+    override fun showEmailError(errorResId: Int)
+        = email_input_layout.run {
+            isErrorEnabled = true
+            error = resources.getString(errorResId)
+        }
+
+    override fun showNameError(errorResId: Int)
+        = name_input_layout.run {
+            isErrorEnabled = true
+            error = resources.getString(errorResId)
+        }
+
+    override fun showPhoneError(errorResId: Int)
+        = phone_input_layout.run {
+            isErrorEnabled = true
+            error = resources.getString(errorResId)
+        }
 
 }
