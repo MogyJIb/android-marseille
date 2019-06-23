@@ -57,7 +57,7 @@ class CartFragment : BaseGoodsFragment(), CartContract.View {
         }
 
         button_buy.setOnClickListener {
-            OrderDialogFragment.newInstance().apply {
+            OrderDialogFragment.newInstance("Оформление заказа").apply {
                 rightButtonListener = DialogInterface.OnClickListener { _, _ ->
                     context?.toast("Ваш заказ успешно оформлен, ожидайте обратной связи")
                     coordinator.navigateUp()

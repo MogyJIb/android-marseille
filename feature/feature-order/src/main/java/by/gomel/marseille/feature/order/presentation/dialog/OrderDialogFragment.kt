@@ -7,7 +7,9 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
+import by.gomel.marseille.core.base.utils.getArgument
 import by.gomel.marseille.core.base.utils.hideErrorOnTextChange
 import by.gomel.marseille.core.base.view.BaseDialogFragment
 import by.gomel.marseille.feature.order.R
@@ -29,7 +31,9 @@ class OrderDialogFragment : BaseDialogFragment(), DialogInterface, OrderDiaogCon
     var rightButtonListener: DialogInterface.OnClickListener? = null
 
     companion object {
-        @JvmStatic fun newInstance() = OrderDialogFragment()
+        @JvmStatic fun newInstance(title: String) = OrderDialogFragment().apply {
+            arguments = bundleOf("title" to title)
+        }
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -60,6 +64,8 @@ class OrderDialogFragment : BaseDialogFragment(), DialogInterface, OrderDiaogCon
             }
             dismiss()
         }
+
+        dialog_title.text = getArgument<String>("title")
 
         name_input_layout.hideErrorOnTextChange()
         email_input_layout.hideErrorOnTextChange()

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.TimePicker
 import androidx.viewpager.widget.PagerAdapter
 import by.gomel.marseille.core.base.utils.hide
 import by.gomel.marseille.core.base.utils.show
@@ -68,9 +70,9 @@ class ServiceCategoryFragment : BaseServiceFragment(), ServiceCategoryContract.V
             selectedCategory?.run { coordinator.toEmployeeList(this) }
         }
         buy_button.setOnClickListener {
-            OrderDialogFragment.newInstance().apply {
+            OrderDialogFragment.newInstance("Оформление записи").apply {
                 rightButtonListener = DialogInterface.OnClickListener { _, _ ->
-                    context?.toast("Ваш заказ успешно оформлен, ожидайте обратной связи")
+                    context?.toast("Ваш заявка успешно отправлена, ожидайте обратной связи")
                     presenter.clearCart()
                 }
             }.show(childFragmentManager, InfoDialog::class.java.simpleName)
@@ -115,6 +117,12 @@ class ViewPagerAdapter : PagerAdapter() {
             container,
             false
         )
+        if (position == 0) {
+            val datePicker = view.findViewById<DatePicker>(R.id.calendar_view)
+            datePicker.minDate = System.currentTimeMillis() - 1000
+        } else {
+            val timePicker = view.findViewById<TimePicker>(R.id.time_picker)
+        }
         container.addView(view)
         return view
     }

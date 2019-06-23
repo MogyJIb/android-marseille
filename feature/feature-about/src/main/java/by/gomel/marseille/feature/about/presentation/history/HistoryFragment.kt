@@ -1,9 +1,13 @@
 package by.gomel.marseille.feature.about.presentation.history
 
+import android.annotation.TargetApi
+import android.os.Build
 import android.os.Bundle
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import by.gomel.marseille.core.base.utils.getArgument
 import by.gomel.marseille.core.base.view.BaseFragment
@@ -29,6 +33,12 @@ class HistoryFragment : BaseFragment() {
         getArgument<CompanyHistoryDto>("historyDto")?.apply {
             //history_content.setText(content)
         }
+        initTextView()
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private fun initTextView() {
+        history_content.breakStrategy = Layout.BREAK_STRATEGY_SIMPLE
     }
 
 }
